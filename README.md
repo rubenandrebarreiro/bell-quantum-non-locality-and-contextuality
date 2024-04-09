@@ -1,1 +1,1 @@
-# bell-quantum-non-locality-and-contextuality
+# Bell's Quantum Non-Locality and Contextuality
