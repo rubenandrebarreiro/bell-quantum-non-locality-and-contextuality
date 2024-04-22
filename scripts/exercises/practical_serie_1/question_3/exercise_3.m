@@ -21,25 +21,34 @@ e_xy = optimvar('e_xy', 4, 1, 'Type', 'integer');
 chsh_inequality_algebraic_max_optimization_prob...
     .Objective = e_xy(1) + e_xy(2) + e_xy(3) - e_xy(4);
 
+
 % Definition of the constraints
 % for the estimation value e_{00} E {-1,+1}
 constraint_1 = e_xy(1) >= -1;
 constraint_2 = e_xy(1) <= 1;
+constraint_3 = e_xy(1)^2 <= 1;
+constraint_4 = e_xy(1)^2 >= 1;
 
 % Definition of the constraints
 % for the estimation value e_{01} E {-1,+1}
-constraint_3 = e_xy(2) >= -1;
-constraint_4 = e_xy(2) <= 1;
+constraint_5 = e_xy(2) >= -1;
+constraint_6 = e_xy(2) <= 1;
+constraint_7 = e_xy(2)^2 <= 1;
+constraint_8 = e_xy(2)^2 >= 1;
 
 % Definition of the constraints
 % for the estimation value e_{10} E {-1,+1}
-constraint_5 = e_xy(3) >= -1;
-constraint_6 = e_xy(3) <= 1;
+constraint_9 = e_xy(3) >= -1;
+constraint_10 = e_xy(3) <= 1;
+constraint_11 = e_xy(3)^2 <= 1;
+constraint_12 = e_xy(3)^2 >= 1;
 
 % Definition of the constraints
 % for the estimation value e_{11} E {-1,+1}
-constraint_7 = e_xy(4) >= -1;
-constraint_8 = e_xy(4) <= 1;
+constraint_13 = e_xy(4) >= -1;
+constraint_14 = e_xy(4) <= 1;
+constraint_15 = e_xy(4)^2 <= 1;
+constraint_16 = e_xy(4)^2 >= 1;
 
 
 % Setup of all the constraints
@@ -64,6 +73,22 @@ chsh_inequality_algebraic_max_optimization_prob...
     .Constraints.cons7 = constraint_7;
 chsh_inequality_algebraic_max_optimization_prob...
     .Constraints.cons8 = constraint_8;
+chsh_inequality_algebraic_max_optimization_prob...
+    .Constraints.cons9 = constraint_9;
+chsh_inequality_algebraic_max_optimization_prob...
+    .Constraints.cons10 = constraint_10;
+chsh_inequality_algebraic_max_optimization_prob...
+    .Constraints.cons11 = constraint_11;
+chsh_inequality_algebraic_max_optimization_prob...
+    .Constraints.cons12 = constraint_12;
+chsh_inequality_algebraic_max_optimization_prob...
+    .Constraints.cons13 = constraint_13;
+chsh_inequality_algebraic_max_optimization_prob...
+    .Constraints.cons14 = constraint_14;
+chsh_inequality_algebraic_max_optimization_prob...
+    .Constraints.cons15 = constraint_15;
+chsh_inequality_algebraic_max_optimization_prob...
+    .Constraints.cons16 = constraint_16;
 
 % Show the mathematical formulation of
 % the maximization optimization problem

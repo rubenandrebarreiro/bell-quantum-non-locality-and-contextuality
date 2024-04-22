@@ -26,23 +26,31 @@ chsh_inequality_local_bound_optimization_prob...
 
 % Definition of the constraints
 % for the a_0 value E [-1,+1]
-constraint_1 = a_0(1) == -1;
+constraint_1 = a_0(1) >= -1;
 constraint_2 = a_0(1) <= 1;
+constraint_3 = a_0(1)^2 <= 1;
+constraint_4 = a_0(1)^2 >= 1;
 
 % Definition of the constraints
 % for the a_1 value E [-1,+1]
-constraint_3 = a_1(1) >= -1;
-constraint_4 = a_1(1) <= 1;
+constraint_5 = a_1(1) >= -1;
+constraint_6 = a_1(1) <= 1;
+constraint_7 = a_1(1)^2 <= 1;
+constraint_8 = a_1(1)^2 >= 1;
 
 % Definition of the constraints
 % for the b_0 value E [-1,+1]
-constraint_5 = b_0(1) >= -1;
-constraint_6 = b_0(1) <= 1;
+constraint_9 = b_0(1) >= -1;
+constraint_10 = b_0(1) <= 1;
+constraint_11 = b_0(1)^2 <= 1;
+constraint_12 = b_0(1)^2 >= 1;
 
 % Definition of the constraints
 % for the b_1 value E [-1,+1]
-constraint_7 = b_1(1) >= -1;
-constraint_8 = b_1(1) <= 1;
+constraint_13 = b_1(1) >= -1;
+constraint_14 = b_1(1) <= 1;
+constraint_15 = b_1(1)^2 <= 1;
+constraint_16 = b_1(1)^2 >= 1;
 
 
 % Setup of all the constraints
@@ -67,6 +75,22 @@ chsh_inequality_local_bound_optimization_prob...
     .Constraints.cons7 = constraint_7;
 chsh_inequality_local_bound_optimization_prob...
     .Constraints.cons8 = constraint_8;
+chsh_inequality_local_bound_optimization_prob...
+    .Constraints.cons9 = constraint_9;
+chsh_inequality_local_bound_optimization_prob...
+    .Constraints.cons10 = constraint_10;
+chsh_inequality_local_bound_optimization_prob...
+    .Constraints.cons11 = constraint_11;
+chsh_inequality_local_bound_optimization_prob...
+    .Constraints.cons12 = constraint_12;
+chsh_inequality_local_bound_optimization_prob...
+    .Constraints.cons13 = constraint_13;
+chsh_inequality_local_bound_optimization_prob...
+    .Constraints.cons14 = constraint_14;
+chsh_inequality_local_bound_optimization_prob...
+    .Constraints.cons15 = constraint_15;
+chsh_inequality_local_bound_optimization_prob...
+    .Constraints.cons16 = constraint_16;
 
 % Show the mathematical formulation of
 % the maximization optimization problem
