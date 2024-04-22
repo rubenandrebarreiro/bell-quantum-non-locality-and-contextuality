@@ -1,3 +1,7 @@
+% Clear Command Window
+clc;
+
+
 % Definition of the maximization optimization
 % problem for the estimation of the upper bound
 % for the CHSH Inequality
@@ -8,7 +12,7 @@ chsh_inequality_algebraic_max_optimization_prob = ...
 % to be optimized in the maximization optimization
 % problem for the estimation of the upper bound
 % for the CHSH Inequality
-e_xy = optimvar('e_xy', 4, 1);
+e_xy = optimvar('e_xy', 4, 1, 'Type', 'integer');
 
 % Definition of the objective function of
 % the maximization optimization problem
@@ -18,22 +22,22 @@ chsh_inequality_algebraic_max_optimization_prob...
     .Objective = e_xy(1) + e_xy(2) + e_xy(3) - e_xy(4);
 
 % Definition of the constraints
-% for the estimation value e_{00} E [-1,+1]
+% for the estimation value e_{00} E {-1,+1}
 constraint_1 = e_xy(1) >= -1;
 constraint_2 = e_xy(1) <= 1;
 
 % Definition of the constraints
-% for the estimation value e_{01} E [-1,+1]
+% for the estimation value e_{01} E {-1,+1}
 constraint_3 = e_xy(2) >= -1;
 constraint_4 = e_xy(2) <= 1;
 
 % Definition of the constraints
-% for the estimation value e_{10} E [-1,+1]
+% for the estimation value e_{10} E {-1,+1}
 constraint_5 = e_xy(3) >= -1;
 constraint_6 = e_xy(3) <= 1;
 
 % Definition of the constraints
-% for the estimation value e_{11} E [-1,+1]
+% for the estimation value e_{11} E {-1,+1}
 constraint_7 = e_xy(4) >= -1;
 constraint_8 = e_xy(4) <= 1;
 
@@ -109,10 +113,10 @@ fprintf('\n');
 % for the estimation of the upper bound
 % for the CHSH Inequality
 fprintf('Such that:\n');
-fprintf('  e_{00} E [-1, +1]\n');
-fprintf('  e_{01} E [-1, +1]\n');
-fprintf('  e_{10} E [-1, +1]\n');
-fprintf('  e_{11} E [-1, +1]\n');
+fprintf('  e_{00} E {-1, +1}\n');
+fprintf('  e_{01} E {-1, +1}\n');
+fprintf('  e_{10} E {-1, +1}\n');
+fprintf('  e_{11} E {-1, +1}\n');
 
 
 % Print a blank line
@@ -128,7 +132,7 @@ fprintf('\n');
 fprintf(['Maximum Algebraic Upper Bound L ' ...
          'for CHSH Inequality:\n'])
 fprintf('  e_{00} + e_{01} + e_{10} - e_{11} =\n');
-fprintf('         = %d + %d + %d - %d <= L^(A) = %d\n', ...
+fprintf('         = %d + %d + %d - (%d) <= L^(A) = %d\n', ...
          e_00, e_01, e_10, e_11, ...
          chsh_inequality_algebraic_max_upper_bound_L);
 

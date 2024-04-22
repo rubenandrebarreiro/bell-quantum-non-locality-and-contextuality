@@ -1,3 +1,7 @@
+% Clear Command Window
+clc;
+
+
 % Create the symbolic numbers
 % for the complex coefficients of
 % a two-dimensional quantum state
@@ -9,15 +13,15 @@ syms alpha_0 alpha_1 beta_0 beta_1;
 % the real and imaginary parts of
 % the complex coefficient alpha
 % being real numbers
-assume(alpha_0, "real");
-assume(alpha_1, "real");
+assume(alpha_0, 'real');
+assume(alpha_1, 'real');
 
 % Create the assumptions regarding
 % the real and imaginary parts of
 % the complex coefficient beta
 % being real numbers
-assume(beta_0, "real");
-assume(beta_1, "real");
+assume(beta_0, 'real');
+assume(beta_1, 'real');
 
 
 % Create the complex number alpha

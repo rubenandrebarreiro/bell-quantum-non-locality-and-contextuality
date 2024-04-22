@@ -1,3 +1,7 @@
+% Clear Command Window
+clc;
+
+
 % Create the symbolic numbers
 % for the complex coefficients of
 % a two-dimensional quantum state
@@ -14,15 +18,15 @@ syms theta phi;
 % the real and imaginary parts of
 % the complex coefficient alpha
 % being real numbers
-assume(alpha_0, "real");
-assume(alpha_1, "real");
+assume(alpha_0, 'real');
+assume(alpha_1, 'real');
 
 % Create the assumptions regarding
 % the real and imaginary parts of
 % the complex coefficient beta
 % being real numbers
-assume(beta_0, "real");
-assume(beta_1, "real");
+assume(beta_0, 'real');
+assume(beta_1, 'real');
 
 
 % Create the complex number alpha
@@ -69,7 +73,7 @@ ket_psi = [alpha beta].';
 % Compute the two-dimensional quantum state
 % in its trigonometric form in function of
 % the respective theta and phi angles
-ket_psi_trig = [alpha_trig beta_trig];
+ket_psi_trig = [alpha_trig beta_trig].';
 
 % Compute the two-dimensional quantum states
 % |0> and |1> corresponding to the classical states

@@ -1,3 +1,7 @@
+% Clear Command Window
+clc;
+
+
 % Create the symbolic numbers
 % for the three-dimensional
 % unit vector vec(n)
@@ -159,4 +163,43 @@ if isequal(pauli_sigma_vec_n_squared,...
     fprintf('\n');
 
 end
+
+
+[pauli_sigma_vec_n_eigenvectors_matrix,...
+ pauli_sigma_vec_n_eigenvalues_diagonal_matrix] = ...
+    eig(pauli_sigma_vec_n);
+
+
+pauli_sigma_vec_n_eigenvalues = ...
+    diag(pauli_sigma_vec_n_eigenvalues_diagonal_matrix);
+
+pauli_sigma_vec_n_eigenvalue_0 = ...
+    pauli_sigma_vec_n_eigenvalues(1);
+
+pauli_sigma_vec_n_eigenvalue_1 = ...
+    pauli_sigma_vec_n_eigenvalues(2);
+
+pauli_sigma_vec_n_eigenvector_0 = ...
+    pauli_sigma_vec_n_eigenvectors_matrix(:, 1);
+
+pauli_sigma_vec_n_eigenvector_1 = ...
+    pauli_sigma_vec_n_eigenvectors_matrix(:, 2);
+
+
+disp(pauli_sigma_vec_n_eigenvalue_0);
+disp(pauli_sigma_vec_n_eigenvalue_1);
+
+disp(pauli_sigma_vec_n_eigenvector_0.');
+disp(pauli_sigma_vec_n_eigenvector_1.');
+
+ket_plus_vec_n = pauli_sigma_vec_n_eigenvector_0;
+bra_plus_vec_n = conj(transpose(pauli_sigma_vec_n_eigenvector_0));
+
+ket_minus_vec_n = pauli_sigma_vec_n_eigenvector_1;
+bra_minus_vec_n = conj(transpose(pauli_sigma_vec_n_eigenvector_1));
+
+outer_prod_plus_vec_n = ket_plus_vec_n * bra_plus_vec_n;
+outer_prod_minus_vec_n = ket_minus_vec_n * bra_minus_vec_n;
+
+disp(simplify(outer_prod_plus_vec_n - outer_prod_minus_vec_n));
 

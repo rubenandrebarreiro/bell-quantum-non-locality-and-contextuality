@@ -1,3 +1,7 @@
+% Clear Command Window
+clc;
+
+
 % Create the Pauli I (sigma_i) Matrix
 pauli_sigma_i = full(Pauli('I'));
 
