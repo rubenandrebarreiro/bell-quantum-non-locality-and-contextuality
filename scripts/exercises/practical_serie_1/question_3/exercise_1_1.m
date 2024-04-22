@@ -162,7 +162,7 @@ fprintf('\n');
 % the maximization optimization problem
 % for the estimation of the upper bound
 % for the CHSH Inequality
-fprintf(['Maximum Algebraic Upper Bound L ' ...
+fprintf(['(Classical) Local Upper Bound L ' ...
          'for CHSH Inequality:\n'])
 fprintf('  a_0 x b_0 + a_0 x b_0 + a_1 x b_0 - a_1 x b_1 =\n');
 fprintf('         = %d + %d + %d - %d <= L^(C) = %d\n', ...
@@ -184,4 +184,4 @@ fprintf('  b_1 = %d\n', b_1);
 
 
 % Print a blank line
-fprintf('\n')
+fprintf('\n');
