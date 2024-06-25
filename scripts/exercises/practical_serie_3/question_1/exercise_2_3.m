@@ -32,6 +32,11 @@ fprintf("**********************" + ...
         "**********************\n\n");
 
 
+% Define the tolerance error for
+% high-precision comparison of values
+tolerance_error = 0.000001;
+
+
 % Define the minimum number n of parties
 num_min_parties = 3;
 
@@ -67,24 +72,40 @@ for num_parties = num_min_parties:num_max_parties
                 num_parties, num_parties, ...
                 m_n_ghz_state_expectation_value);
         
-        % Compute and print the maximum algebraic bound
+        % Compute the maximum algebraic bound
+        % AB_max_(n) for the current configuration
+        % regarding the number n of parties
+        algebraic_maximum_bound = ...
+            compute_algebraic_maximum_bound(num_parties);
+
+        % Print the maximum algebraic bound
         % AB_max_(n) for the current configuration
         % regarding the number n of parties
         fprintf("* The maximum algebraic bound \n " + ...
                 " for n = %d parties is: AB_max_(%d) = %.4f\n", ...
                 num_parties, num_parties, ...
-                compute_algebraic_maximum_bound(num_parties));
+                algebraic_maximum_bound);
         
-        % Print an informative message about the expectation value
-        % <M_n> coinciding with the maximum algebraic bound
-        % AB_max_(n) for the current configuration
-        % regarding the number n of parties
-        fprintf("* The expectation value <M_%d> for\n " + ...
-                " the operator M_%d and a GHZ state\n " + ...
-                " with n = %d parties corresponds to\n " + ...
-                " the maximum algebraic bound AB_max!\n", ...
-                num_parties, num_parties, num_parties);
-        
+
+        % If the expectation value <M_n> coincides
+        % with the maximum algebraic bound AB_max_(n) for
+        % the current configuration regarding the number n of parties
+        if( abs( m_n_ghz_state_expectation_value - ...
+                 algebraic_maximum_bound) <= tolerance_error )
+    
+            % Print an informative message about the expectation value
+            % <M_n> coinciding with the maximum algebraic bound
+            % AB_max_(n) for the current configuration
+            % regarding the number n of parties
+            fprintf("* The expectation value <M_%d> for\n " + ...
+                    " the operator M_%d and a GHZ state\n " + ...
+                    " with n = %d parties corresponds to\n " + ...
+                    " the maximum algebraic bound AB_max_(%d)!\n", ...
+                    num_parties, num_parties, ...
+                    num_parties, num_parties);
+       
+        end
+
         % Print two blank lines
         fprintf("\n\n");
 
