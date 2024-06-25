@@ -32,14 +32,8 @@ fprintf("**********************" + ...
         "**********************\n\n");
 
 
-
-for i = 0:0.025:1.0
-
-    disp(i)
-
-end
-
-
+% Define the Mermin Inequality local classical bound
+mermin_inequality_local_classical_bound = vpa(2);
 
 
 % Define the minimum number n of parties
@@ -55,53 +49,121 @@ for num_parties = num_min_parties:num_max_parties
     % If the current configuration regarding
     % the number n of parties is odd
     if( mod(num_parties, 2) ~= 0 )
-        
-        % Compute the expectation value
-        % for the Mermin Inequality <M_n>,
-        % considering a number n of parties
-        m_n_ghz_state_expectation_value = ...
-            compute_m_n_ghz_state_expectation_value...
-                (num_parties, a_n_0_operator, a_n_1_operator);
-        
+            
         % Print a headline for the current configuration
         % regarding the number n of parties
         fprintf("For a number of parties n = %d:\n\n", num_parties);
-        
-        % Compute and print the expectation value
-        % <M_n> for the current configuration
-        % regarding the number n of parties
-        fprintf("* The expectation value <M_%d> for\n " + ...
-                " the operator M_%d and a GHZ state\n " + ...
-                " with n = %d parties is: <M_%d> = %.4f\n", ...
-                num_parties, num_parties, ...
-                num_parties, num_parties, ...
-                m_n_ghz_state_expectation_value);
-        
-        % Compute and print the maximum algebraic bound
-        % AB_max_(n) for the current configuration
-        % regarding the number n of parties
-        fprintf("* The maximum algebraic bound \n " + ...
-                " for n = %d parties is: AB_max_(%d) = %.4f\n", ...
-                num_parties, num_parties, ...
-                compute_algebraic_maximum_bound(num_parties));
-        
-        % Print an informative message about the expectation value
-        % <M_n> coinciding with the maximum algebraic bound
-        % AB_max_(n) for the current configuration
-        % regarding the number n of parties
-        fprintf("* The expectation value <M_%d> for\n " + ...
-                " the operator M_%d and a GHZ state\n " + ...
-                " with n = %d parties corresponds to\n " + ...
-                " the maximum algebraic bound AB_max!\n", ...
-                num_parties, num_parties, num_parties);
-        
-        % Print two blank lines
-        fprintf("\n\n");
+    
+
+        % For each value of probability v to
+        % configure the noisy GHZ state
+        for probability_v = 0:0.025:1.0
+
+            % Compute the expectation value
+            % for the Mermin Inequality <M_n>,
+            % considering a number n of parties
+            % as well as, a probability v
+            m_n_werner_noisy_ghz_state_expectation_value = ...
+                compute_m_n_werner_noisy_ghz_state_expectation_value...
+                    (num_parties, probability_v, ...
+                     a_n_0_operator, a_n_1_operator);
+            
+            % Compute and print the expectation value
+            % <M_n> for the current configuration regarding
+            % the number n of parties and probability v
+            fprintf("* The expectation value <M_%d> for\n " + ...
+                    " the operator M_%d and a noisy GHZ state\n " + ...
+                    " with n = %d parties and v = %.4f is: <M_%d> = %.4f\n", ...
+                    num_parties, num_parties, ...
+                    num_parties, probability_v, num_parties, ...
+                    m_n_werner_noisy_ghz_state_expectation_value);
+
+
+            % If the expectation value <M_n>
+            % for the current configuration regarding
+            % the number n of parties and probability v
+            % violates the Mermin Inequality (local classical bound)
+            if( m_n_werner_noisy_ghz_state_expectation_value >= ...
+                mermin_inequality_local_classical_bound )
+                
+                % Print the expectation value <M_n>
+                % for the current configuration regarding
+                % the number n of parties and probability v
+                % violating the Mermin Inequality (local classical bound)
+                fprintf("* <M_%d> [n = %d ; v = %.4f] >= C_(%d)" + ...
+                        " (=) %.4f >= %.4f\n", ...
+                        num_parties, num_parties, ...
+                        probability_v, num_parties, ...
+                        m_n_werner_noisy_ghz_state_expectation_value, ...
+                        mermin_inequality_local_classical_bound);
+
+                % Print an informative message about
+                % the expectation value <M_n> violating with
+                % the Mermin Inequality (local classical bound) C_(n)
+                % for the current configuration regarding
+                % the number n of parties and probability v
+                fprintf("* The expectation value <M_%d> for\n " + ...
+                        " the operator M_%d and a noisy GHZ state\n " + ...
+                        " with n = %d parties and v = %.4f violates\n " + ...
+                        " the Mermin Inequality (local classical bound)!\n", ...
+                        num_parties, num_parties, num_parties, ...
+                        probability_v);
+            
+            end
+            
+
+            % If the expectation value <M_n>
+            % for the current configuration regarding
+            % the number n of parties and probability v does not
+            % violate the Mermin Inequality (local classical bound)
+            if( m_n_werner_noisy_ghz_state_expectation_value < ...
+                mermin_inequality_local_classical_bound )
+                
+                % Print the expectation value <M_n>
+                % for the current configuration regarding
+                % the number n of parties and probability v not
+                % violating the Mermin Inequality (local classical bound)
+                fprintf("* <M_%d> [n = %d ; v = %.4f] < C_(%d)" + ...
+                        " (=) %.4f < %.4f\n", ...
+                        num_parties, num_parties, ...
+                        probability_v, num_parties, ...
+                        m_n_werner_noisy_ghz_state_expectation_value, ...
+                        mermin_inequality_local_classical_bound);
+                
+            end
+
+            % Print two blank lines
+            fprintf("\n\n");
+
+        end
 
     end
 
 end
 
+
+% Print a separator
+fprintf("**********************" + ...
+        "**********************\n\n");
+
+% Print a section about the conclusions of this quantum experiment,
+% regarding the configuration for a noisy GHZ state with (white)
+% noise for a given number n of parties and a probability v
+fprintf("Conclusions:\n")
+fprintf("1) Greater the odd number of parties, easier to\n" + ...
+        "   achieve the quantum bound Q to violate\n" + ...
+        "   the Mermin Inequality (local classical bound) C;\n");
+fprintf("2) The (white) noise will affect the GHZ state,\n" + ...
+        "   regarding the violation of the Mermin Inequality\n" + ...
+        "   (local classical bound) C;\n")
+fprintf("3) Greater the odd number of parties,\n" + ...
+        "   better tolerance to (white) noise, the GHZ state\n" + ...
+        "   will have, regarding the violation of\n" + ...
+        "   the Mermin Inequality (local classical bound) C;\n")
+fprintf("4) Everytime we increase the number of parties to\n" + ...
+        "   the next odd number n, the minimum probability v\n" + ...
+        "   that is required to ensure the violation of\n" + ...
+        "   the Mermin Inequality (local classical bound) C, halves;\n\n")
 
 % Print a separator
 fprintf("**********************" + ...
@@ -168,32 +230,49 @@ function ghz_state_density_matrix = ...
 end
 
 
+% Define a function to compute the density matrix
+% for a probabilistic noisy GHZ state, given
+% a number n of parties and a probability v
 function probabilistic_ghz_state_density_matrix = ...
          compute_probabilistic_ghz_state_density_matrix...
             (n, probability_v)
     
+    % Compute the density matrix
+    % for a probabilistic noisy GHZ state, given
+    % the number n of parties and a probability v
     probabilistic_ghz_state_density_matrix = ...
         probability_v * compute_ghz_state_density_matrix(n);
 
 end
 
+
+% Define a function to compute the white noise density matrix
+% given a number n of parties and a probability v
 function probabilistic_white_noise_density_matrix = ...
     compute_probabilistic_white_noise_density_matrix(n, probability_v)
     
+    % Compute the white noise density matrix
+    % given the number n of parties and a probability v
     probabilistic_white_noise_density_matrix = ...
         (1 - probability_v) * (1 / 2^n) * eye(2^n);
 
 end
 
 
+% Define a function to compute the (final)
+% density matrix for a probabilistic noisy GHZ state,
+% given a number n of parties and a probability v
 function probabilistic_werner_noisy_ghz_state_density_matrix = ...
     compute_probabilistic_werner_noisy_ghz_state_density_matrix...
         (n, probabilistic_v)
-
+    
+    % Compute the (final) density matrix for
+    % a probabilistic noisy GHZ state, given
+    % the number n of parties and a probability v
     probabilistic_werner_noisy_ghz_state_density_matrix = ...
         compute_probabilistic_ghz_state_density_matrix...
-            (n, probabilistic_v) * ...
-                compute_probabilistic_ghz_state_density_matrix...
+            (n, probabilistic_v) + ...
+                compute_probabilistic_white_noise_density_matrix...
                     (n, probabilistic_v);
 
 end
@@ -208,19 +287,6 @@ function quantum_bound_expectation_value = ...
     % the expectation value <M_n>, given a number n of parties
     quantum_bound_expectation_value = ...
         2^( (n - 1) / 2 );
-
-end
-
-
-% Define a function to compute the maximum
-% algebraic bound, given a number n of parties
-function algebraic_maximum_bound = ...
-    compute_algebraic_maximum_bound(n)
-    
-    % Compute the maximum algebraic bound,
-    % given a number n of parties
-    algebraic_maximum_bound = ...
-        2^( floor(n / 2) );
 
 end
 
@@ -442,14 +508,15 @@ end
 % Define the function to compute the expectation value <M_(n)>
 % for the GHZ state for n parties and the M_(n) Bell operator,
 % given a number n of parties, as well as, A_0 and A_1 operators
-function m_n_ghz_state_expectation_value = ...
-    compute_m_n_ghz_state_expectation_value...
-        (n, a_operator_1, a_operator_2)
+function m_n_werner_noisy_ghz_state_expectation_value = ...
+    compute_m_n_werner_noisy_ghz_state_expectation_value...
+        (n, probability_v, a_operator_1, a_operator_2)
     
     % Compute the density matrix for
     % the GHZ state, given the number n of parties
-    ghz_state_density_matrix = ...
-        compute_ghz_state_density_matrix(n);
+    probabilistic_werner_noisy_ghz_state_density_matrix = ...
+        compute_probabilistic_werner_noisy_ghz_state_density_matrix...
+            (n, probability_v);
     
     % Compute the M_(n) Bell operator,
     % given the number n of parties, as well as, A_0 and A_1 operators
@@ -459,7 +526,8 @@ function m_n_ghz_state_expectation_value = ...
     % Conpute the expectation value <M_(n)> from
     % the trace for the multiplication of the density matrix for
     % the GHZ state for n parties and the  M_(n) Bell operator
-    m_n_ghz_state_expectation_value = ...
-        trace(ghz_state_density_matrix * m_n_bell_operator);
+    m_n_werner_noisy_ghz_state_expectation_value = ...
+        trace(probabilistic_werner_noisy_ghz_state_density_matrix * ...
+              m_n_bell_operator);
     
 end
