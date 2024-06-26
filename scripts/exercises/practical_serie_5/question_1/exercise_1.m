@@ -1,10 +1,16 @@
 % Clear Command Window
 clc;
 
+
+% Print a blank line
 fprintf("\n");
 
+% Print the headline for the three
+% main stances for the realism notion
 fprintf("The three main stances towards realism are:\n");
 
+% Print the information and description about
+% the Fight stance for the realism notion
 fprintf(" <strong>1) Fight (Strong Realism):</strong>\n");
 fprintf("    * ""I believe in old-fashioned realism,\n" + ...
         "       and as such any putative ontology of\n" + ...
@@ -14,8 +20,12 @@ fprintf("    * ""I believe in old-fashioned realism,\n" + ...
         "       such as Bell - Clauser-Horne-Shimony-Holt (Bell-CHSH)\n" + ...
         "       or Kochen-Specker (KS) needs to be dropped"";\n");
 
+% Print a blank line
 fprintf("\n");
 
+% Print the information and justification about
+% the choice of interpretation of Quantum Mechanics
+% for the Fight stance for the realism notion
 fprintf("    * A possible Quantum Mechanics Interpretation that\n" + ...
         "      fits on the <strong>Fight</strong> stance " + ...
               "is the <strong>De Broglie-Bohm</strong>\n" + ...
@@ -38,23 +48,31 @@ fprintf("      iv)  (Try to) have causal explanations for all\n" + ...
         "           and wave interference, for example.\n")
 
 
+% Print two blank lines
 fprintf("\n\n");
 
 % Print a separator
 fprintf("***********************************" + ...
         "***********************************");
 
+% Print two blank lines
 fprintf("\n\n");
 
 
+% Print the information and description about
+% the Freeze stance for the realism notion
 fprintf(" <strong>2) Freeze (Medium Realism):</strong>\n");
 fprintf("    * ""I believe in a notion of 'modern realism',\n" + ...
         "       which is not captured by the ontological model\n" + ...
         "       framework and, as such, manages to sidestep\n" + ...
         "       the implications of the typical no-go theorems"";\n");
 
+% Print a blank line
 fprintf("\n");
 
+% Print the information and justification about
+% the choice of interpretation of Quantum Mechanics
+% for the Freeze stance for the realism notion
 fprintf("    * A possible Quantum Mechanics Interpretation that fits on\n" + ...
         "      the <strong>Freeze</strong> stance " + ...
               "is the <strong>Copenhagen Interpretation</strong>, since:\n");
@@ -91,20 +109,28 @@ fprintf("      v)   Settles on an instrumentalist approach,\n" + ...
         "           deep philosophical aspects.\n");
 
 
+% Print two blank lines
 fprintf("\n\n");
 
 % Print a separator
 fprintf("***********************************" + ...
         "***********************************");
 
+% Print two blank lines
 fprintf("\n\n");
 
 
+% Print the information and description about
+% the Flight stance for the realism notion
 fprintf(" <strong>3) Flight (No/Weak Realism):</strong>\n");
 fprintf("    * ""I do not believe in any notion of realism"";\n");
 
+% Print a blank line
 fprintf("\n");
 
+% Print the information and justification about
+% the choice of interpretation of Quantum Mechanics
+% for the Flight stance for the realism notion
 fprintf("    * A possible Quantum Mechanics Interpretation that fits on\n" + ...
         "      the <strong>Flight</strong> stance " + ...
               "is the <strong>Many World Interpretation</strong>, since:\n");
@@ -140,12 +166,16 @@ fprintf("      v)   Rejects the idea of classical realism,\n" + ...
         "           with a traditional view of reality;\n")
 
 
+% Print two blank lines
 fprintf("\n\n");
 
 % Print a separator
 fprintf("***********************************" + ...
         "***********************************");
 
+% Print two blank lines
 fprintf("\n\n");
 
+
+% Print a blank line
 fprintf("\n");
