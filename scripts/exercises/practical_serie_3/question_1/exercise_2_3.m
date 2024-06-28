@@ -9,23 +9,23 @@ pauli_sigma_x = full(Pauli('X'));
 pauli_sigma_y = full(Pauli('Y'));
 
 
-% Define the operator A^(n)_0
-a_n_0_operator = pauli_sigma_y;
+% Define the operator A^(0)_0
+a_0_0_operator = pauli_sigma_y;
 
-% Define the operator A^(n)_1
-a_n_1_operator = -pauli_sigma_x;
-
-
-% Print the content of the operator A^(n)_0
-fprintf("The operator A^(n)_0 to be used is: \n" + ...
-        "* A^(n)_0 = sigma_y = \n");
-disp(a_n_0_operator);
+% Define the operator A^(0)_1
+a_0_1_operator = -pauli_sigma_x;
 
 
-% Print the content of the operator A^(n)_1
-fprintf("The operator A^(n)_1 to be used is: \n" + ...
-        "* A^(n)_1 = -sigma_x = \n");
-disp(a_n_1_operator);
+% Print the content of the operator A^(0)_0
+fprintf("The operator A^(0)_0 to be used is: \n" + ...
+        "* A^(0)_0 = sigma_y = \n");
+disp(a_0_0_operator);
+
+
+% Print the content of the operator A^(0)_1
+fprintf("The operator A^(0)_1 to be used is: \n" + ...
+        "* A^(0)_1 = -sigma_x = \n");
+disp(a_0_1_operator);
 
 % Print a separator line
 fprintf("**********************" + ...
@@ -56,7 +56,7 @@ for num_parties = num_min_parties:num_max_parties
         % considering a number n of parties
         m_n_ghz_state_expectation_value = ...
             compute_m_n_ghz_state_expectation_value...
-                (num_parties, a_n_0_operator, a_n_1_operator);
+                (num_parties, a_0_0_operator, a_0_1_operator);
         
         % Print a headline for the current configuration
         % regarding the number n of parties
@@ -232,10 +232,14 @@ function m_n_minus_1_1_bell_operator = ...
         % Initialize the counter for consecutive Bell operators
         num_consecutive_bell_operators = 0;
         
-        % Initialize the signal for the Bell operator pair
-        bell_operator_pair_signal = -1;
-    
+        % Initialize the flag to exchange the order of
+        % the Bell operators for each additional pair of parties,
+        % to ensure that (approximately) a half of the parties
+        % apply one measurement configuration, while the other
+        % half of the parties apply the other measurement configuration
+        pair_parties_operator_order_exchange_flag = true;
         
+
         % For the remaining number n of parties,
         % within the range [3, N-1]
         for i = 3:n-1
@@ -243,9 +247,10 @@ function m_n_minus_1_1_bell_operator = ...
            % If were applied two consecutive Bell operators
            if( num_consecutive_bell_operators == 2 )
                
-               % Flip the signal for the (next) Bell operator pair
-               bell_operator_pair_signal = ...
-                   -1 * bell_operator_pair_signal;
+               % Flip the flag to exchange the order of
+               % the Bell operators for each additional pair of parties
+               pair_parties_operator_order_exchange_flag = ...
+                   ~pair_parties_operator_order_exchange_flag;
                 
                % Reset the counter for consecutive Bell operators
                num_consecutive_bell_operators = 0;
@@ -255,12 +260,29 @@ function m_n_minus_1_1_bell_operator = ...
             
            % If were not applied two consecutive Bell operators
            if( num_consecutive_bell_operators ~= 2 )
-                
-               % Compute the M_(n-1) Bell operator
-               m_n_minus_1_1_bell_operator = ...
-                   kron( m_n_minus_1_1_bell_operator, ...
-                         ( a_operator_1 + ...
-                           bell_operator_pair_signal * a_operator_2 ) );
+               
+               % If the the order of the Bell operators
+               % for each additional pair of parties, is not exchanged
+               if( ~pair_parties_operator_order_exchange_flag )
+
+                   % Compute the M_(n-1) Bell operator
+                   m_n_minus_1_1_bell_operator = ...
+                       kron( m_n_minus_1_1_bell_operator, ...
+                             ( a_operator_1 + ...
+                               a_operator_2 ) );
+               
+               % If the the order of the Bell operators
+               % for each additional pair of parties, is exchanged
+               else
+               
+                  % Compute the M_(n-1) Bell operator
+                  m_n_minus_1_1_bell_operator = ...
+                       kron( m_n_minus_1_1_bell_operator, ...
+                             ( a_operator_1 - ...
+                               a_operator_2 ) );
+
+               end
+               
                
                % Increase the counter for consecutive Bell operators
                num_consecutive_bell_operators = ...
@@ -306,15 +328,17 @@ function m_n_minus_1_2_bell_operator = ...
     % If the number n of parties is greater than 3
     if( n > 3 )
         
-
         % Initialize the counter for consecutive Bell operators
         num_consecutive_bell_operators = 0;
         
-        % Initialize the signal for the Bell operator pair
-        bell_operator_pair_signal = 1;
+        % Initialize the flag to exchange the order of
+        % the Bell operators for each additional pair of parties,
+        % to ensure that (approximately) a half of the parties
+        % apply one measurement configuration, while the other
+        % half of the parties apply the other measurement configuration
+        pair_parties_operator_order_exchange_flag = true;
 
         
-
         % For the remaining number n of parties,
         % within the range [3, N-1]
         for i = 3:n-1
@@ -322,24 +346,42 @@ function m_n_minus_1_2_bell_operator = ...
            % If were applied two consecutive Bell operators
            if( num_consecutive_bell_operators == 2 )
                
-               % Flip the signal for the (next) Bell operator pair
-               bell_operator_pair_signal = ...
-                   -1 * bell_operator_pair_signal;
+               % Flip the flag to exchange the order of
+               % the Bell operators for each additional pair of parties
+               pair_parties_operator_order_exchange_flag = ...
+                   ~pair_parties_operator_order_exchange_flag;
                 
                % Reset the counter for consecutive Bell operators
                num_consecutive_bell_operators = 0;
     
            end
-    
-
+           
+           
            % If were not applied two consecutive Bell operators
            if( num_consecutive_bell_operators ~= 2 )
                
-               % Compute the M'_(n-1) Bell operator
-               m_n_minus_1_2_bell_operator = ...
-                   kron( m_n_minus_1_2_bell_operator, ...
-                         ( a_operator_1 + ...
-                           bell_operator_pair_signal * a_operator_2 ) );
+               % If the the order of the Bell operators
+               % for each additional pair of parties, is not exchanged
+               if( ~pair_parties_operator_order_exchange_flag )
+
+                   % Compute the M'_(n-1) Bell operator
+                   m_n_minus_1_2_bell_operator = ...
+                       kron( m_n_minus_1_2_bell_operator, ...
+                             ( a_operator_1 - ...
+                               a_operator_2 ) );
+
+               % If the the order of the Bell operators
+               % for each additional pair of parties, is exchanged
+               else
+                   
+                   % Compute the M'_(n-1) Bell operator
+                   m_n_minus_1_2_bell_operator = ...
+                       kron( m_n_minus_1_2_bell_operator, ...
+                             ( a_operator_1 + ...
+                               a_operator_2 ) );
+
+               end
+               
                
                % Increase the counter for consecutive Bell operators
                num_consecutive_bell_operators = ...
