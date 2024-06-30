@@ -1,0 +1,88 @@
+
+From the three main stances towards the notion of
+realism that capture the usual way we deal with
+the Bell - Clauser-Horne-Shimony-Holt (Bell-CHSH)
+and Kochen-Specker (KS) no-go theorems,
+the one I find most appealing is:
+
+ * Freeze (Medium Realism):
+    => "I believe in a notion of 'modern realism',
+        which is not captured by the ontological model
+        framework and, as such, manages to sidestep
+        the implications of the typical no-go theorems";
+
+The justification is:
+
+ * I strongly believe on the idea of intedeterminism and
+   unpredictability derived from the probabilistic nature
+   from Quantum Mechanics, as well as I also believe that
+   the observer actor plays an essential role on the several
+   interactions with the physical systems and their respective
+   quantum phenomena. I also believe on the notions of both
+   Bohr's Complementarity Principle and Heisenberg's Uncertainty
+   Principles, where the quantum properties of a particle and
+   a wave (e.g., the position and momentum of a particle) cannot
+   be computed and determined simulaneously by an observer actor.
+   Finally, I agree that most of these properties can be verified
+   on a specialized laboratory with proper quantum devices,
+   following an instrumentalist approach, from which we
+   can validade the usefulness of theory for predicting
+   some experimental results on practice, rather than
+   deeply describing the underlying reality;
+
+
+**********************************************************************
+
+
+As a concrete interpretation ofthe two no-go theorems
+(Bell - Clauser-Horne-Shimony-Holt (Bell-CHSH) and
+Kochen-Specker (KS) no-go theorems) for my choice on
+the stance towards the notion of realism I find most
+appealing, is the following one:
+
+ 1) Bell - Clauser-Horne-Shimony-Holt (Bell-CHSH):
+    * Parameter Independence (PI) ∧ Outcome Independence (OI) ∧
+      Measurement Independence (MI) ∧ Quantum Mechanics (QM)
+      => Contradiction!
+
+      => For this no-go theorem, I believe that both
+         the parameters and outcomes of a physical experiment
+         are not independent and can affect the final results of
+         that same experiment, depending on the configured setup
+         we choose a priori, dropping then both conditions of
+         Parameter Independence (PI) and Outcome Independence (OI).
+         However, I strongly belive that each observer actor
+         plays an essential role in its interaction with
+         a physical experiment, and have a free-will to
+         choose the measurement configuration independently
+         from all the others chosen by all the remaining
+         involved observer actors, not dropping then
+         the condition of Measurement Independence (MI);
+
+ 2) Kochen - Specker (KS):
+    * Outcome Determinism (OD) ∧ 
+      Measurement Non-Contextuality (MNC) ∧
+      Quantum Mechanics (QM) => Contradiction!
+
+      => For this no-go theorem, I believe that
+         the outcomes of a physical experiment can be
+         undeterministic, depending on the configured
+         setup of that physical experiment, the actions
+         a possible observer actor make on that same
+         physical system, the possible interactions that
+         physical system can have with the environment,
+         among many factors, affecting its outcome results,
+         dropping then the condition of Outcome Determinism (OD).
+         On the other hand, I believe that the measurements
+         are usually defined and performed considering
+         a global context for the physical experiment,
+         depending on the configured setup we choose for that
+         physical experiment, which can affect the values of
+         the quantum properties being measured and their
+         respective final outcome results, dropping then
+         the condition of Measurement Non-Contextuality (MNC).
+
+
+******************************************************************************
+
+

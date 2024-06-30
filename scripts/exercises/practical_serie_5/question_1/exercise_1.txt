@@ -1,0 +1,117 @@
+
+The three main stances towards realism are:
+ 1) Fight (Strong Realism):
+    * "I believe in old-fashioned realism,
+       and as such any putative ontology of
+       this kind is cornered by the usual
+       no-go theorems. Consequently, at least one of
+       the assumptions of the considered no-go theorem,
+       such as Bell - Clauser-Horne-Shimony-Holt (Bell-CHSH)
+       or Kochen-Specker (KS) needs to be dropped";
+
+    * A possible Quantum Mechanics Interpretation that
+      fits on the Fight stance is the De Broglie-Bohm
+      Interpretation (Bohmian Interpretation), since:
+      i)   Proposes a strong ontological realism,
+           where the particles always have a well-defined
+           position, momentum, and state, independently of
+           being observed or not;
+      ii)  Accepts local hidden variables that allow to
+           explain the position, momentum, or state of
+           a particle without requiring a notion of
+           wave-function collapse;
+      iii) Have a deterministic nature, where all
+           the future quantum behaviour of a physical system
+           is completely determined, given its initial state;
+      iv)  (Try to) have causal explanations for all
+           the quantum phenomena, using notions of
+           quantum potential and pilot wave theory to
+           explain quantum phenomena such as non-locality
+           and wave interference, for example.
+
+
+**********************************************************************
+
+ 2) Freeze (Medium Realism):
+    * "I believe in a notion of 'modern realism',
+       which is not captured by the ontological model
+       framework and, as such, manages to sidestep
+       the implications of the typical no-go theorems";
+
+    * A possible Quantum Mechanics Interpretation that fits on
+      the Freeze stance is the Copenhagen Interpretation, since:
+      i)   Follows the idea of indeterminism, since it
+           accepts the Heisenberg's Uncertainty Principle
+           as a fundamental and irreversible characteristic of
+           quantum phenomena, where a particle can never
+           have its position and momentum well-defined and
+           determined simultaneously, for example;
+      ii)  Has the observer playing a primary and central
+           role, where the wave-function (probabilistically)
+           represents our knowledge or information about
+           the quantum properties of a physical system,
+           avoiding and holding a deterministic explanation of
+           quantum events and reality itself until the moment of
+           an observation, focusing instead on the interaction
+           between an observer and a physical system;
+      iii) Accepts the notion of wave-function collapse as
+           a fundamental postulate, during a quantum measurement,
+           leading to a single outcome among the several ones
+           described by the wave-function before that same
+           quantum measurement happens, without seeking a deeper
+           explanation for the underlying mechanism or process;
+      iv)  Follows the notions of Bohr's Complementarity
+           Principle, also interconnected with the Heisenberg's
+           Uncertainty Principle, where the quantum properties of
+           a particle and a wave cannot be computed and determined
+           simulaneously by an observer actor, being complementary
+           aspects of a physical system;
+      v)   Settles on an instrumentalist approach,
+           emphasizing the practical usefulness of theory
+           for predicting experimental results rather than
+           describing the underlying reality, avoiding
+           deep philosophical aspects.
+
+
+**********************************************************************
+
+ 3) Flight (No/Weak Realism):
+    * "I do not believe in any notion of realism";
+
+    * A possible Quantum Mechanics Interpretation that fits on
+      the Flight stance is the Many World Interpretation, since:
+      i)   Avoids the notion of wave-function collapse,
+           postulating that every possible outcome or
+           reality resulting from a quantum measurement on
+           a physical system really occur, but in different
+           and parallel branches of reality/universe;
+      ii)  Accepts the idea of multiplicity of universes,
+           where every quantum event results on dividing
+           the universe into a large number of branches,
+           avoiding explanations about the uniqueness of
+           observed quantum events, rather than trying to
+           reconcile the wave function with a single observed
+           reality, allowing all possible realities to exist
+           simultaneously in separate universes;
+      iii) Avoids classical philosophical problems of
+           quantum mechanics, such as the role of the observer
+           and the nature of objective reality, circumventing
+           the need for a special observer actor or
+           a wave-function collapse mechanism;
+      iv)  Reinterprets the traditional comprehension of
+           the probabilistic and undeterministic nature of
+           quantum measurements, redefining the respective
+           probabilities as a distribution measure of
+           many outcomes and realities;
+      v)   Rejects the idea of classical realism,
+           departing from the classical conception of
+           a single reality objective and shared universe,
+           while embraces the idea of multiple universes,
+           in favor of a more complex and ramified reality,
+           avoiding to reconcile quantum mechanics
+           with a traditional view of reality;
+
+
+**********************************************************************
+
+

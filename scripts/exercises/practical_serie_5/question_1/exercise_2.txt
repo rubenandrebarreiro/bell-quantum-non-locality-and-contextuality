@@ -1,0 +1,226 @@
+
+First, we need to address the following
+conditions for the realism no-go theorems:
+
+ 1) Parameter Independence (PI):
+    * The outcome result of a quantum measurement at
+      one location does not depend on the parameter choice of
+      quantum measurement (e.g., detector orientation) at
+      a different distant location;
+
+ 2) Outcome Independence (OI):
+    * The outcome result of a quantum measurement at
+      one location does not depend on the outcome result of
+      another quantum measurement performed at
+      a different distant location;
+
+ 3) Measurement Independence (MI):
+    * The configurations of a quantum measurement are
+      independently chosen from the quantum properties of
+      the particles that are being measured;
+
+ 4) Outcome Determinism (OD):
+    * The quantum properties of the particles
+      have well-defined values, independently of
+      any quantum measurement performed;
+
+ 5) Measurement Non-Contextuality (MNC):
+    * The value assigned to any quantum property does
+      not depend on the set of other quantum properties
+      that are measured simultaneously;
+
+
+******************************************************************************
+
+
+The two no-go theorems addressed in this exercise are:
+
+ 1) Bell - Clauser-Horne-Shimony-Holt (Bell-CHSH):
+    * Parameter Independence (PI) ∧ Outcome Independence (OI) ∧
+      Measurement Independence (MI) ∧ Quantum Mechanics (QM)
+      => Contradiction!
+    * This contradiction occurs because since
+      Quantum Mechanics predicts quantum correlations
+      that violate the Bell-CHSH Inequalities, then one of
+      the respective conditions should be dropped or violated;
+
+ 2) Kochen - Specker (KS):
+    * Outcome Determinism (OD) ∧ 
+      Measurement Non-Contextuality (MNC) ∧
+      Quantum Mechanics (QM) => Contradiction!
+    * This contradiction occurs because since
+      Quantum Mechanics predicts that the outcome results
+      from the quantum measurements depend of the context of
+      the other quantum measurements performed, then one of
+      the respective conditions should be dropped or violated;
+
+
+******************************************************************************
+
+
+Now we can analyse how the De Broglie-Bohm Interpretation,
+Copenhagen Interpretation, and Many World Interpretation
+deal with the previous Bell-CHSH and KS no-go theorems:
+
+ 1) For the Bell-CHSH no-go theorem:
+
+    i)   De Broglie-Bohm Interpretation:
+         * This interpretation of Quantum Mechanics
+           is explicitly non-local, with the pilot wave
+           theory or quantum potential used to determine
+           the trajectory of a particle;
+
+           a) Parameter Independence (PI) (Violated):
+              * This interpretation is explicitally non-local,
+                with the pilot wave theory or the quantum potential
+                influencing the quantum properties of a particle
+                non-locally, accepting the parameter dependency in
+                the quantum measurements between distant locations;
+
+           b) Outcome Independence (OI) (Violated):
+              * This interpretation assumes non-local
+                quantum correlations between the outcome results
+                from the quantum measurements being performed
+                between distant locations;
+
+           c) Measurement Independence (MI) (Not Violated):
+              * This interpretation assumes non-local
+                quantum correlations between the outcome results
+                from the quantum measurements being performed
+                between distant locations;
+
+
+    ii)  Copenhagen Interpretation:
+         * This interpretation of Quantum Mechanics accepts
+           quantum non-locality and indeterminism as fundamental
+           characteristics, thus, considering Quantum Mechanics
+           as intrinsically probabilistic;
+
+           a) Parameter Independence (PI) (Violated):
+              * This interpretation accepts implicitly
+                quantum non-locality, where the outcome results
+                from the quantum measurements can be affected
+                instantaneously by the configuration of other
+                quantum measurements being performed in
+                another distant location;
+
+           b) Outcome Independence (OI) (Violated):
+              * This interpretation considers that all
+                the outcome results of quantum measurements
+                being performed in distant locations are correlated,
+                thus, being consistent with the quantum predictions
+                that violate the Bell Inequalities;
+
+           c) Measurement Independence (MI) (Not Violated):
+              * This interpretation assumes that all possible
+                configurations of quantum measurements can be
+                chosen independently of the quantum properties of
+                the particles being considered;
+
+
+    iii) Many World Interpretation:
+         * This interpretation of Quantum Mechanics
+           eliminates the needs for wave-function collapse
+           and for violating Bell Inequalities, having
+           quantum non-locality naturally built in;
+
+           a) Parameter Independence (PI) (Not Violated):
+              * This interpretation considers that all possible
+                outcome results from a quantum measurement occur in
+                different and separated branches of the universe or
+                reality, but the chosen parameters on a location do not
+                affect the outcome results in another distant location,
+                within the same branch of the universe or reality;
+
+           b) Outcome Independence (OI) (Violated):
+              * This interpretation takes into account that
+                the outcome results of quantum measurements
+                performed on distant locations are correlated
+                according to the predictions of Quantum Mechanics,
+                within each specific branch of the universe or reality;
+
+           c) Measurement Independence (MI) (Not Violated):
+              * This interpretation assumes that all possible
+                configurations of quantum measurements are independently
+                performed on different branches of the universe or reality;
+
+
+
+ 2) For the KS no-go theorem:
+
+    i)   De Broglie-Bohm Interpretation:
+         * This interpretation of Quantum Mechanics it is
+           a deterministic theory of local hidden variables
+           and seeks to maintain a notion of classical realism;
+
+           a) Outcome Determinism (OD) (Not Violated):
+              * This interpretation maintains the determinism of
+                the quantum events, since the trajectory of a particle
+                is guided deterministically by the pilot wave theory or
+                its respective quantum potential;
+
+           b) Measurement Non-Contextuality (MNC) (Violated):
+              * This interpretation should accept the contextuality of
+                the quantum measurements being performed to be consistent
+                with Quantum Mechanics, meaning that a value assigned to
+                some measured quantum property depends on the set of other
+                quantum measurements being performed simultaneously;
+
+
+    ii)  Copenhagen Interpretation:
+         * This interpretation of Quantum Mechanics broadly
+           accepts the context of the quantum measurements
+           performed as a fundamental characteristic;
+
+           a) Outcome Determinism (OD) (Violated):
+              * This interpretation rejects the notion of classical
+                determinism, accepting the intrinsically probabilistic
+                nature of Quantum Mechanics, where the respective
+                outcome results do not have pre-defined values
+                before the quantum measurements occurring;
+
+           b) Measurement Non-Contextuality (MNC) (Violated):
+              * This interpretation accepts that the outcome result of
+                a quantum measurement depends on its respective context,
+                i.e., it inherently depends on the set of all the other
+                quantum measurements performed simultaneously;
+
+
+    iii) Many World Interpretation:
+         * This interpretation of Quantum Mechanics considers
+           the context of the quantum measurements performed
+           as a fundamental characteristic of the splitting of
+           different and parallel branches of the universe or
+           reality for a specific quantum event;
+
+           a) Outcome Determinism (OD) (Not Violated):
+              * This interpretation considers that a single
+                outcome result of the set of possibel ones from
+                a quantum measurement being performed is deterministic
+                within each resulting individual and parallel
+                branch of the universe or reality;
+
+           b) Measurement Non-Contextuality (MNC) (Violated):
+              * This interpretation takes into account that
+                each quantum measurement being performed occurs
+                in a specific context within the respective
+                resulting branch of the universe or reality;
+
+
+******************************************************************************
+
+
+Conclusions:
+ * From the two addressed no-go theorems, we can see the KS theorem
+   as imposing more severe restrictions on classical ontologies,
+   as it not only rules out local hidden variable theories,
+   but also any theory that attempts to be non-contextual;
+ * This notion means that any interpretation of Quantum Mechanics that
+   seeks to maintain a classical and deterministic realism must accept
+   the inherent contextuality of quantum measurements, which is
+   a fundamental constraint that affects possible ontologies.
+
+
+******************************************************************************
+
+
